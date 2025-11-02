@@ -1,0 +1,5 @@
+{
+  "name": "D&D - Dungeon Master IA",
+  "description": "Una aventura de Dungeons & Dragons para un solo jugador, basada en texto y potenciada por la API de Gemini. La IA actúa como Dungeon Master, creando una historia dinámica e interactiva basada en tus acciones.",
+  "requestFramePermissions": []
+}
