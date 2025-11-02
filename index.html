@@ -1,34 +1,49 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="UTF--8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>D&D - Dungeon Master IA</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-      /* Custom scrollbar for a more thematic feel */
+    
+    <!-- Tailwind CSS Play CDN: Procesa las clases de Tailwind en el navegador -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Typography Plugin CDN: Añade las clases 'prose' para el estilo del texto de la historia -->
+    <script src="https://cdn.tailwindcss.com/@tailwindcss/typography@0.5.13/dist/typography.min.js"></script>
+
+    <!-- Configuración de Tailwind CSS: Define las fuentes personalizadas para el juego -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              'serif-dnd': ['"IM Fell English"', 'serif'],
+              'sans-dnd': ['Inter', 'sans-serif'],
+            },
+          }
+        }
+      }
+    </script>
+    
+    <!-- Estilos Personalizados y Animaciones -->
+    <style type="text/tailwindcss">
+      /* Scrollbar personalizado para una apariencia más temática */
       ::-webkit-scrollbar {
         width: 8px;
       }
       ::-webkit-scrollbar-track {
-        background: #1f2937; /* gray-800 */
+        @apply bg-gray-800;
       }
       ::-webkit-scrollbar-thumb {
-        background: #4b5563; /* gray-600 */
-        border-radius: 4px;
+        @apply bg-gray-600 rounded;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #6b7280; /* gray-500 */
+        @apply bg-gray-500;
       }
-      .font-serif-dnd {
-        font-family: 'IM Fell English', serif;
-      }
-      .font-sans-dnd {
-        font-family: 'Inter', sans-serif;
-      }
+
       @keyframes spell-flash {
         0% { opacity: 0; transform: scale(0.5); }
         50% { opacity: 1; }
@@ -37,6 +52,7 @@
       .animate-spell-flash {
         animation: spell-flash 0.5s ease-out forwards;
       }
+
       @keyframes shake-effect {
         10%, 90% { transform: translate3d(-1px, 0, 0); }
         20%, 80% { transform: translate3d(2px, 0, 0); }
@@ -47,20 +63,40 @@
         box-shadow: inset 0 0 15px 5px rgba(255, 0, 0, 0.5);
         animation: shake-effect 0.6s cubic-bezier(.36,.07,.19,.97) both;
       }
+
+      @keyframes fade-in {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      @keyframes fade-in-fast {
+          from { opacity: 0; }
+          to { opacity: 1; }
+      }
+
+      .animate-fade-in {
+        animation: fade-in 0.5s ease-out forwards;
+      }
+
+      .animate-fade-in-fast {
+          animation: fade-in-fast 0.2s ease-out forwards;
+      }
     </style>
-  <script type="importmap">
+<script type="importmap">
 {
   "imports": {
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.28.0",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react": "https://aistudiocdn.com/react@^19.2.0"
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.28.0",
+    "vite": "https://aistudiocdn.com/vite@^7.1.12",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.0"
   }
 }
 </script>
 </head>
   <body class="bg-gray-900 text-gray-200 font-sans-dnd">
     <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

@@ -7,15 +7,15 @@ interface TitleScreenProps {
 }
 
 const RACE_IMAGE_URLS: { [key: string]: string } = {
-  Humano: 'https://i.postimg.cc/T3dC3T5Y/human-fantasy-portrait.png',
-  Elfo: 'https://i.postimg.cc/k4VoVvjG/elf-fantasy-portrait.png',
-  Enano: 'https://i.postimg.cc/tJ055QJ2/dwarf-fantasy-portrait.png',
-  Mediano: 'https://i.postimg.cc/wMSKTx4L/halfling-fantasy-portrait.png',
-  Dracónido: 'https://i.postimg.cc/13y7zH8v/dragonborn-fantasy-portrait.png',
-  Gnomo: 'https://i.postimg.cc/prcM93tQ/gnome-fantasy-portrait.png',
-  Semielfo: 'https://i.postimg.cc/L85XFTsV/half-elf-fantasy-portrait.png',
-  Semiorco: 'https://i.postimg.cc/vB6D3mJg/half-orc-fantasy-portrait.png',
-  Tiflin: 'https://i.postimg.cc/NMLt2g3w/tiefling-fantasy-portrait.png',
+  Humano: 'https://i.postimg.cc/nrZzV833/human-paladin.png',
+  Elfo: 'https://i.postimg.cc/J0Bv4tVb/elf-ranger.png',
+  Enano: 'https://i.postimg.cc/cLDyG6Vf/dwarf-warrior.png',
+  Mediano: 'https://i.postimg.cc/YCwL7yN6/halfling-rogue.png',
+  Dracónido: 'https://i.postimg.cc/x8P5G14G/dragonborn-sorcerer.png',
+  Gnomo: 'https://i.postimg.cc/j2y2Ljgq/gnome-artificer.png',
+  Semielfo: 'https://i.postimg.cc/W3dKwyv6/half-elf-bard.png',
+  Semiorco: 'https://i.postimg.cc/kXF12B9d/half-orc-barbarian.png',
+  Tiflin: 'https://i.postimg.cc/NfK7pSjV/tiefling-warlock.png',
 };
 
 const RACE_DESCRIPTIONS: { [key: string]: string } = {

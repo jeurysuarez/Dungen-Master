@@ -26,6 +26,14 @@ const CLASS_DEFAULTS: { [key: string]: { attack: number, defense: number, maxHp:
 const MIN_COOLDOWN = 2;
 const MAX_COOLDOWN = 5;
 
+// Componente de ayuda movido fuera del componente principal para evitar que se vuelva a crear.
+const FormInput: React.FC<{label: string, children: React.ReactNode}> = ({ label, children }) => (
+  <div>
+      <label className="block mb-2 text-sm font-bold text-gray-400">{label}</label>
+      {children}
+  </div>
+);
+
 const CharacterCreation: React.FC<CharacterCreationProps> = ({ onCharacterCreate }) => {
   const [name, setName] = useState('');
   const [race, setRace] = useState(RACES[0]);
@@ -83,13 +91,6 @@ const CharacterCreation: React.FC<CharacterCreationProps> = ({ onCharacterCreate
       skills: customizedSkills,
     });
   };
-  
-  const FormInput: React.FC<{label: string, children: React.ReactNode}> = ({ label, children }) => (
-    <div>
-        <label className="block mb-2 text-sm font-bold text-gray-400">{label}</label>
-        {children}
-    </div>
-  );
 
   const sharedInputClass = "w-full bg-gray-900/80 border border-gray-600 rounded-md px-4 py-2 text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-amber-500 transition-all";
   const selectedClassStats = CLASS_DEFAULTS[charClass];

@@ -1,10 +1,11 @@
-
 import { GoogleGenAI, Chat, Type, Modality } from "@google/genai";
-import type { Character, DMResponse, Enemy, Item, Spell } from '../types';
+import type { Character, DMResponse, Enemy } from '../types';
 
+// FIX: Switched from import.meta.env.VITE_API_KEY to process.env.API_KEY to align with the coding guidelines.
 const API_KEY = process.env.API_KEY;
 
 if (!API_KEY) {
+    // FIX: Updated the error message to reflect the change to process.env.API_KEY.
     throw new Error("La variable de entorno API_KEY no está configurada");
 }
 
